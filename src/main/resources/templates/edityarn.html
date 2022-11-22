@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+	<title>Edit yarn</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Edit yarn</h1>
+	<div>
+	<form th:object="${edityarn}" th:action="@{/saveyarn}" action="#" method="post">
+			<input type="hidden" id="yarnid" th:field="*{yarnid}" />
+			<div>
+			<label>Brand</label>
+			<input type="text" th:field="*{brand}" />
+			</div>
+			<div>
+			<label>Name</label>
+			<input type="text" th:field="*{name}" />
+			</div>
+			<div>
+			<label>Description</label>
+			<input type="text" th:field="*{description}" />
+			</div>
+			<div>
+			<label>Price</label>
+			<input type="text" th:field="*{price}" />
+			</div>
+			<div>
+			<br>
+					
+			<input type="submit" value = "Save"></input>
+	</form>
+	</div>
+
+</body>
+</html>

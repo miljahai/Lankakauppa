@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+	<title>Yarnlist</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Yarns</h1>
+	<table>
+		<tr>
+			<th>Brand</th>			
+			<th>Name</th>
+			<th>Description</th>
+			<th>Price</th>
+						
+		</tr>
+		<tr th:each = "yarn : ${yarns}">
+			<td th:text="${yarn.brand}"></td>
+			<td th:text="${yarn.name}"></td>			
+			<td th:text="${yarn.description}"></td>
+			<td th:text="${yarn.price}"></td>
+				<td sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/edityarn/{id}(id=${yarn.yarnid})}">Edit</a></td>
+				<td sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/deleteyarn/{id}(id=${yarn.yarnid})}">Delete</a></td>
+		</tr>	
+	</table>
+	<td sec:authorize="hasAuthority('ADMIN')"><a href="/addyarn">Add yarns</a></td>
+	<br />
+	<a href="/patternlist">Back to patterns</a>
+</body>
+</html>

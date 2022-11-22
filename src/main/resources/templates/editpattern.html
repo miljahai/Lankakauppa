@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+	<title>Edit pattern</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Edit pattern</h1>
+	<div>
+	<form th:object="${edit}" th:action="@{/save}" action="#" method="post">
+			<input type="hidden" id="patternid" th:field="*{patternid}" />
+			<div>
+			<label>Name</label>
+			<input type="text" th:field="*{name}" />
+			</div>
+			<div>
+			<label>Content</label>
+			<input type="text" th:field="*{content}" />
+			</div>
+			<div>
+			<br>
+			<label for="yarnlist">Yarn</label>
+			<select id="yarnlist" th:field="*{yarn}" class="form-control">
+				<option th:each="yarn: ${yarns}" th:value="${yarn.yarnid}" th:text="${yarn.name}"></option>
+			</select>
+			
+			<input type="submit" value = "Save"></input>
+	</form>
+	</div>
+
+</body>
+</html>
