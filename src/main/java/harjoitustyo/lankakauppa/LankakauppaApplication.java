@@ -34,13 +34,13 @@ public class LankakauppaApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-		appUserRepository.save(new ApplicationUser("Milja", "Haiko", "USER", "user", "$2a$10$GL7Mjm745jTV5KXEzC3nI.7OC3wBluMPmvHqYnZDJ1hIR/lGSStHu"));
-		appUserRepository.save(new ApplicationUser("Milja", "Haiko", "ADMIN", "admin", "$2a$10$yKd/VEAj6KdYyAhR14Xx1.W/xS1sixv0SnUD.4m/pGRNdp/a0Y1O6"));
-		
-		yrepository.save(new Yarn("Novita", "7-veljestä", "75%villa 25%polyamidi", 2.7));
-		yrepository.save(new Yarn("DROPS", "Karisma", "100%villa", 2.7));
-		
-		prepository.save(new Pattern("Lapaset", "Neulo joustinneuleella resorit, sitten sileää, kavenna, päättele ja tee peukalot", yrepository.findByName("7-veljestä").get(0)));
+//		appUserRepository.save(new ApplicationUser("Milja", "Haiko", "USER", "user", "$2a$10$GL7Mjm745jTV5KXEzC3nI.7OC3wBluMPmvHqYnZDJ1hIR/lGSStHu"));
+//		appUserRepository.save(new ApplicationUser("Milja", "Haiko", "ADMIN", "admin", "$2a$10$yKd/VEAj6KdYyAhR14Xx1.W/xS1sixv0SnUD.4m/pGRNdp/a0Y1O6"));
+//		
+//		yrepository.save(new Yarn("Novita", "7-veljestä", "75%villa 25%polyamidi", 2.7));
+//		yrepository.save(new Yarn("DROPS", "Karisma", "100%villa", 2.7));
+//		
+//		prepository.save(new Pattern("Lapaset", "Neulo joustinneuleella resorit, sitten sileää, kavenna, päättele ja tee peukalot", yrepository.findByName("7-veljestä").get(0)));
 		
 		
 		for (Yarn yarn : yrepository.findAll()) {
