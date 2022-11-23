@@ -22,7 +22,7 @@ public class Pattern {
 	private String content;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name="yarnid")
+	@JoinColumn(name = "yarnid")
 	private Yarn yarn;
 
 	public Pattern() {

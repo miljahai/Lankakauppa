@@ -1,6 +1,6 @@
 SET FOREIGN_KEY_CHECKS=0;
-DROP TABLE IF EXISTS pattern;
 DROP TABLE IF EXISTS yarn;
+DROP TABLE IF EXISTS pattern;
 DROP TABLE IF EXISTS application_user;
 SET FOREIGN_KEY_CHECKS=1;
 
@@ -10,7 +10,8 @@ brand VARCHAR(50) NOT NULL,
 name VARCHAR(50) NOT NULL, 
 description VARCHAR (50),
 price DOUBLE,
-PRIMARY KEY (id));
+PRIMARY KEY (id)
+);
 
 INSERT INTO yarn (brand, name, description, price)
 VALUES ("Novita", "7-veljestä", "75%villa 25%polyamidi", 2.7),

@@ -19,8 +19,11 @@ public class ApplicationUser {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-	private String firstName, lastName;
+	
+	@Column(name = "firstname")
+	private String firstName;
+	@Column(name = "lastname")
+	private String lastName;
 	private String role;
 	@Column(name = "username", nullable = false, unique = true)
 	private String username;
